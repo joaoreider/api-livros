@@ -1,6 +1,6 @@
 
 
-import mongoose from "mongoose";
+import mongoose, { mongo } from "mongoose";
 
 const Schema = mongoose.Schema;
 
@@ -14,7 +14,8 @@ const LivroSchema = new Schema({
         required: true
     },
     autor: {
-        type: String,
+        type: mongoose.Schema.Types.ObjectId,
+        ref:'autores',
         required: true
     },
     editora: {
